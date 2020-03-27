@@ -1,0 +1,17 @@
+<div class="product-list-container">
+   
+  <div class="col-sm-12">
+    <div class="col-sm-3" *ngFor="let productList of __allprdts | filter : __searchedProduct | sortBy : sortByOption  ">
+      <div class="thumbnail">
+        <img src="{{productList.img_url}}" alt="...">
+        <div class="caption">
+          <h3>{{productList.name}}</h3>
+        <p>
+          <i class="fa fa-inr" aria-hidden="true"></i>{{productList.price}} <del>900</del>&nbsp;&nbsp; <span class="offer">{{productList.discount}}% Off</span></p>
+          <p><button class="btn btn-warning" role="button" (click)="addToCart(productList.id,1)">AddtoCart</button> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

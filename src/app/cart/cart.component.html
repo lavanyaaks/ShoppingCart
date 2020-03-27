@@ -1,0 +1,145 @@
+<div class="container">
+  <!-- <div class="row">
+    <app-header></app-header>
+  </div> -->
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-sm-8">
+        <div class="col-md-12 cart-margin " *ngFor="let itm of cart.cartItemsList ">
+        <div class="col-md-3">
+          <img src="{{itm.img_url}}" alt="..." class="img-responsive">
+        </div>
+        <div class="col-md-3">
+         <div class="item-name">{{itm.name}}</div>
+         <p>
+          <i class="fa fa-inr" aria-hidden="true"></i>{{itm.pr}} <del>900</del>&nbsp;&nbsp; <span class="offer">{{itm.discount}}% Off</span></p>
+        </div>
+        <div class="col-md-3 quantity">
+         
+          <!-- <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-info" type="button" (click)="changeQty(itm.pid,1,'')">+</button>
+                <button class="btn btn-default btn-circle" type="button" (click)="changeQty(itm.pid,1,'')"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+              </div>
+              <input type="text" class="form-control text-center" value="{{itm.qty}}" #qtyRef (keyup)="changeQty(itm.pid,qtyRef.value,'replace')" >
+              <div class="input-group-append">
+                <button class="btn btn-danger" type="button" (click)="changeQty(itm.pid,-1,'')">-</button>
+                <button  type="button" class="btn btn-default btn-circle" (click)="changeQty(itm.pid,-1,'')"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+              </div>
+            </div> -->
+
+            <div class="input-group input-group-sm add-remove mb-3">
+              <div class="input-group-prepend">
+                <button  type="button" class="btn btn-default btn-circle" (click)="changeQty(itm.pid,-1,'')"><i class="fa fa-minus-circle" aria-hidden="true" ></i></button>
+              </div>
+              <!-- <input id="quantity" type="text"  class="form-control quantity-input" value="1"> -->
+              <input type="text" class="form-control text-center" value="{{itm.qty}}" #qtyRef (keyup)="changeQty(itm.pid,qtyRef.value,'replace')" >
+              <div class="input-group-append">
+                <button class="btn btn-default btn-circle" type="button" (click)="changeQty(itm.pid,1,'')"><i class="fa fa-plus-circle" aria-hidden="true" ></i></button>
+              </div>
+            </div>
+
+        </div>
+        <div class="col-md-1 deleteItem">
+          <a class="remove" (click)="removeItem(itm.pid,itm.qty,'replace')"><h5>REMOVE</h5></a>
+        </div>
+      </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-md-12 offset-md-1 price-details column2">
+        <h4 class="price-heading"> PRICE DETAILS</h4>
+        <div class="details">
+          <div class="price">Price({{cart.cartItemsList.length}} Item):<span class="col2-value"><i class="fa fa-inr" aria-hidden="true"></i>{{cart.cartTotal}}</span></div>
+          <div class="discount">Discount:<span class="col2-value"><i class="fa fa-inr" aria-hidden="true"></i>{{cart.cartDiscount}}</span></div>
+          <div class="total">
+            <div class="payable">Total paybale:<span class="col2-value"><i class="fa fa-inr" aria-hidden="true"></i>{{cart.totalAmmout}}</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+   
+   
+
+
+
+
+
+<!--     
+    <div class="cart">
+      
+      <div class="row" >
+        <div class="col-md-12 col-lg-8">
+          <div class="items">
+            <div class="product" >
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="info">
+                    <div class="row">
+                      <div class="col-md-3 product-name">
+                        <div class="name">item.name</div>
+                        <div class="image"><img src="./images/lapi.jpg" class="img-responsive" /></div>
+                      </div>
+                      <div class="col-md-4 price">
+                        <span>item.unitPrice * item.quantity | currency: "INR"</span>
+                      </div>
+                      <div class="col-md-3 quantity">
+                        <label for="quantity">Quantity:</label>
+                        <div class="input-group input-group-sm">
+                          <div class="input-group-prepend">
+                            <button class="btn btn-danger" type="button" >-</button>
+                          </div>
+                          <input id="quantity" type="text"  class="form-control quantity-input">
+                          <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" >+</button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-2 deleteItem">
+                        <button class="btn btn-danger" >Remove</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="summary" >
+            <h3>summary</h3>
+            <div class="summary-item">
+              <span class="text">Subtotal</span>
+              <span class="price">cartService.cart.total | currency: "INR"</span>
+            </div>
+            <div class="summary-item">
+              <span class="text">Discount</span>
+              <ng-template >
+                <span class="price">cartService.discount</span>
+              </ng-template>
+              <ng-template #total>
+                <span class="price">cartService.discount</span>
+              </ng-template> 
+            </div>
+            <div class="summary-item">
+              <span class="text">Shipping</span>
+              <span class="price">0</span>
+            </div>
+            <div class="summary-item">
+              <span class="text">Total</span>
+              <span class="price">cartService.afterDiscountPrice | currency: "INR"</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" >Checkout</button>
+          </div>
+      </div>
+    </div>
+     -->
+  </div>
+  <!-- <div class="row">
+    <app-footer></app-footer>
+  </div> -->
+</div>

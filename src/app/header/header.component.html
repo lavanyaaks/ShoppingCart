@@ -1,0 +1,21 @@
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+ <div class="navbar-header">
+  <a routerLink="/ShoppingCartComponent"><span class="logo-container"><i class="fa fa-star logo-star" aria-hidden="true"></i></span></a>
+</div>
+<ul class="nav navbar-nav navbar-right">
+  <li>
+    <a routerLink="/shoppinglist">ShoppingList</a>
+  </li>
+   <li><a style="width:200px;cursor: pointer;"><app-search></app-search></a></li>
+  <li>
+    <a routerLink="/cart"><i class="fa fa-shopping-cart image-cart" aria-hidden="true"></i>
+        <div class="cartItem" *ngIf="cart.cartItemsList.length">{{cart.cartItemsList.length}}</div>
+    </a>
+  </li>
+ 
+</ul>
+  </div>
+  </nav>
+

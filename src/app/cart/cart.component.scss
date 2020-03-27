@@ -1,0 +1,73 @@
+.add-remove{
+    display: flex;
+}
+.column1{
+    margin-top: 30px;
+    padding:20px;
+    border:1px solid grey;
+    margin-bottom:400px;
+}
+.column2{
+    margin-top: 30px;
+    border:1px solid grey;
+}
+#quantity{
+   margin-left: 10px;
+   margin-right: 10px;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.remove{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.offer{
+    color: green;
+    font-weight: bold;
+}
+.col2-value{
+    float: right;
+}
+.price-heading{
+    border-bottom: 1px solid grey;
+}
+.payable{
+    font-weight: bold;
+    border-top: 1px solid gray;
+    margin-top: 15px;
+  padding-top:15px;
+  padding-bottom: 15px;
+}
+.price .discount{
+    margin-top: 10px;
+}
+.remove{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+}
+.cart-container{
+    position: relative;
+    /* margin-bottom: 400px; */
+    padding-bottom: 450px;
+}
+.summary-margin{
+    margin-top: 11px;
+}
+.cart-margin{
+    //margin: 6px;
+    border: 1px solid grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top:28px;
+}

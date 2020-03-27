@@ -1,0 +1,12 @@
+	<!-- <ul class="sortBy">
+	  <li ><b>Sort By</b></li>
+	  <li class="active" (click)="getSort('price|htl')">Price--High Low</li>
+	  <li (click)="getSort('price|lth')">Price--Low High</li>
+	  <li (click)="getSort('price|dis')">Discount</li>
+	</ul> -->
+	<div class="sortBy">
+		<span class="_3YmFT8">Sort By</span>
+		<div class="sortType" [ngClass]="{'active': selectedItem === 'price|htl'}" (click)="getSort('price|htl')">Price--High Low</div>
+		<div class="sortType" [ngClass]="{'active': selectedItem === 'price|lth'}" (click)="getSort('price|lth')">Price--Low High</div>
+		<div class="sortType" [ngClass]="{'active': selectedItem === 'discount|dis'}" (click)="getSort('discount|dis')">Discount</div>
+	</div>

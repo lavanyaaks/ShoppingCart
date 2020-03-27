@@ -1,0 +1,10 @@
+<div class="col-sm-2">
+  <app-filter></app-filter>
+</div>
+<div class="col-sm-9">
+  <app-sort (sortList)="shortValue($event)"></app-sort>
+  <app-product-list  [sortingBy]="sortOption" [searchedText]="searchText" [allProductList]="shopingList"></app-product-list>
+</div>
+<!-- <div class="col-md-1">
+  <app-cart></app-cart>
+</div> -->

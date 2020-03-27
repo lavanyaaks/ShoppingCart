@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-inverse {
+    background-color:#2874f0;
+    border-color: #2874f0;
+    .glyphicon-search:before {
+    	color: #fff;
+    	font-size:18px;
+	}
+	.fa-shopping-cart:before {
+    	color: #fff;
+    	font-size:18px;
+	}
+	.input-group.input-group-unstyled input.form-control {
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+}
+.input-group-unstyled .input-group-addon {
+    border-radius: 4px;
+    border: 0px;
+    background-color: transparent;
+}
+}
