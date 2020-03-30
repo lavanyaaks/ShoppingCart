@@ -121,7 +121,15 @@ export class CartListService{
       mycart:{}
     })
   }
+removeToCart(pid,qty,replace)
 
+   {
+
+        delete this.cartData[pid];
+
+         this.storeItems();
+
+   }
 
 
 }

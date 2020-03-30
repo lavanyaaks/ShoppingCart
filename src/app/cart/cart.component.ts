@@ -33,14 +33,9 @@ export class CartComponent implements OnInit {
     
   }
   removeItem(pid,qty,replace){
-  		let val=1;
-  		for(var i=0;i<=qty;i++)
-  		{
-  		this.cart.addToCart(pid,val,replace);
-  		}
-  		
-  		
-  		
-  		}
+
+  this.cart.removeToCart(pid,qty,replace)
+
+  }
   }
 
